@@ -11,18 +11,22 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* html, body {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-} */
 
+
+html, body {
+    scroll-snap-type: y mandatory;
+}
 
 section {
     min-height: 100vh;
-    padding: 100px 10%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .container {
@@ -62,21 +66,7 @@ p {
     color: var(--muted);
     transition: opacity 1s ease;
 }
-html, body {
-    scroll-snap-type: y mandatory;
-}
 
-section {
-    min-height: 100vh;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-}
 /* ===== HERO ===== */
 .hero {
     min-height: 100vh;
