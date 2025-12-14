@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const knowledge = {
-        "who are you": "i am fine, Thank you!",
+        "who are you": "i am fine Thank you!, how about you?",
+        "i am great": "I'm glad to hear that.",
         "skills": "Python, Data Analysis, Frontend Development, UI Design.",
         "contact": "You can reach me via LinkedIn or email."
     };
