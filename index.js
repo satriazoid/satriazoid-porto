@@ -1,22 +1,39 @@
-/* ===== TYPING EFFECT ===== */
-const text = "Hello, I'm Your Name";
-const subtitleText = "Data Scientist • Frontend Developer • UI Designer";
+document.addEventListener("DOMContentLoaded", () => {
 
-let index = 0;
-const speed = 90;
+    const text = "Hello, I'm Jejo";
+    const subtitleText = "Data Scientist • Frontend Developer • UI Designer";
 
-function typeEffect() {
-    if (index < text.length) {
-        document.getElementById("typing").textContent += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, speed);
-    } else {
-        // tampilkan subtitle setelah typing selesai
-        const subtitle = document.getElementById("subtitle");
-        subtitle.textContent = subtitleText;
-        subtitle.style.opacity = 1;
+    const typingEl = document.getElementById("typing");
+    const subtitleEl = document.getElementById("subtitle");
+
+    let index = 0;
+    const speed = 90;
+
+    function typeEffect() {
+        if (index < text.length) {
+            typingEl.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, speed);
+        } else {
+            subtitleEl.textContent = subtitleText;
+            subtitleEl.style.opacity = 1;
+        }
     }
-}
+
+    typeEffect();
+});
+
+
+
+
+document.querySelectorAll('.social a').forEach(btn => {
+    btn.addEventListener('click', e => {
+        btn.classList.add('clicked');
+        setTimeout(() => btn.classList.remove('clicked'), 150);
+    });
+});
+
+
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
