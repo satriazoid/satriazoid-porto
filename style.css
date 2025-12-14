@@ -1,0 +1,180 @@
+:root {
+    --bg: #071a12;
+    --text: #ecfdf5;
+    --muted: #9fbfb2;
+    --accent: #34d399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ===== BACKGROUND ANIMATION (GREEN SMOOTH) ===== */
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle,
+        rgba(52,211,153,0.18),
+        transparent 70%);
+    filter: blur(90px);
+    animation: float 25s ease-in-out infinite;
+}
+
+.blob:nth-child(1) {
+    top: -150px;
+    left: -120px;
+}
+
+.blob:nth-child(2) {
+    bottom: -150px;
+    right: -120px;
+    animation-delay: 8s;
+}
+
+@keyframes float {
+    0%   { transform: translate(0,0); }
+    50%  { transform: translate(80px,60px); }
+    100% { transform: translate(0,0); }
+}
+
+/* ===== GENERAL ===== */
+section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--muted);
+    margin: 0 auto;
+    max-width: 650px;
+}
+.cursor {
+    color: var(--accent);
+    animation: blink 1s infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+#subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    transition: opacity 1s ease;
+}
+
+/* ===== HERO ===== */
+.hero span { color: var(--accent); }
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* ===== CARD ===== */
+.card {
+    padding: 30px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    transition: transform .3s ease, border .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+
+/* ===== SOCIAL MEDIA (CIRCLE ICON) ===== */
+.social {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 26px;
+    z-index: 10;
+}
+
+.social a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;           /* 🔥 bikin bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    transition: all .3s ease;
+}
+.social img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Hover effect */
+.social a:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 18px rgba(52,211,153,.4);
+    transform: translateY(-5px);
+}
+
+
+
+/* ===== REVEAL ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
