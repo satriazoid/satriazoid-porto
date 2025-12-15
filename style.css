@@ -5,13 +5,17 @@
     --border: #e5e7eb;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
 }
-
-
 
 html, body {
     scroll-snap-type: y mandatory;
@@ -26,14 +30,116 @@ section {
     justify-content: center;
     align-items: center;
 
-    position: relative;
+    scroll-margin-top: 64px; /* navbar height */
 }
 
 .container {
     max-width: 900px;
     width: 100%;
+    padding: 80px 10%;
     text-align: center;
 }
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    background: #000;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* BRAND */
+.brand-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+
+/* LINKS (DESKTOP) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* HAMBURGER (HIDDEN DESKTOP) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: #000;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        padding: 24px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        color: #fff;
+    }
+}
+
 
 h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -124,20 +230,18 @@ p {
 
 
 
-/* ===== SOCIAL MEDIA (CIRCLE ICON) ===== */
-.social {
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
+/* =========================
+   SOCIAL LINKS (IN SECTION)
+   ========================= */
+
+.social-links {
+    margin-top: 32px;
     display: flex;
-    gap: 26px;
-    z-index: 9999;
-    pointer-events: auto; 
+    justify-content: center;
+    gap: 22px;
 }
 
-
-.social a {
+.social-links a {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -149,27 +253,20 @@ p {
     transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.social img {
+.social-links img {
     width: 22px;
     height: 22px;
     object-fit: contain;
 }
 
-
-/* hover */
-.social a:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+.social-links a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
-/* klik */
-.social a:active {
-    transform: scale(0.92);
-    box-shadow: 0 4px 10px rgba(0,0,0,.2);
-}
-
-.social a.clicked {
-    transform: scale(0.9);
+.collab-text {
+    margin-bottom: 10px; /* jarak ke ikon sosial */
+    color: var(--muted);
 }
 
 

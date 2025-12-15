@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 document.querySelectorAll('.social a').forEach(btn => {
     btn.addEventListener('click', e => {
         btn.classList.add('clicked');
@@ -60,3 +59,19 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 reveals.forEach(el => observer.observe(el));
+
+
+// Mobile navbar toggle
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Auto close menu after click (mobile UX)
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});

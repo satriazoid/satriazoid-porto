@@ -8,7 +8,6 @@
     <meta name="robots" content="noindex">
 </head>
 <body>
-<body>
 <!-- BACKGROUND -->
  
 <div class="bg">
@@ -16,24 +15,36 @@
     <div class="blob"></div>
 </div>
 
-<!-- SOCIAL MEDIA CENTER -->
-<div class="social">
-    <a href="https://www.instagram.com/4triaaa/" target="_blank">
-        <img src="image/instagram.png" alt="Instagram">
-    </a>
-    <a href="https://linkedin.com/in/username" target="_blank">
-        <img src="image/linkend.png" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/satriazoid" target="_blank">
-        <img src="image/github.png" alt="GitHub">
-    </a>
-    <a href="https://www.threads.com/@4triaaa" target="_blank">
-        <img src="image/threads.png" alt="thereads">
-    </a>
-</div>
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- LOGO / NAME -->
+        <div class="nav-brand">
+            <!-- nanti bisa ganti img -->
+            <span class="brand-name">Satriazoid</span>
+        </div>
+
+        <!-- HAMBURGER -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- LINKS -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#work">What I Do</a></li>
+            <li><a href="#collaboration">Collaborate</a></li>
+        </ul>
+    </div>
+</nav>
+
+
 
 <!-- HERO -->
-<section class="hero">
+<section id="home"  class="hero">
     <div class="hero-content">
         <h1>
             <span id="typing"></span>
@@ -45,9 +56,8 @@
         </p>
     </div>
 </section>
-
 <!-- ABOUT -->
-<section class="reveal">
+<section id="about" class="reveal">
     <div class="container">
         <h2>About Me</h2>
         <p>I blend data, logic, and design into clean digital experiences.</p>
@@ -55,7 +65,7 @@
 </section>
 
 <!-- SKILLS -->
-<section class="reveal">
+<section id="skills" class="reveal">
     <div class="container">
         <h2>Skills</h2>
         <div class="grid">
@@ -88,7 +98,7 @@
 </section>
 
 <!-- WHAT I DO -->
-<section class="reveal">
+<section id="work"  class="reveal">
     <div class="container">
         <h2>What I Do</h2>
         <div class="grid">
@@ -109,12 +119,32 @@
 </section>
 
 <!-- CONTACT -->
-<section class="reveal">
+<section id="collaboration"  class="collaboration">
     <div class="container">
         <h2>Let’s Collaborate</h2>
-        <p style="color:var(--accent);margin-top:15px;">satriaalfa77@outlook.com</p>
+        <p class="collab-text">
+            Open for collaboration, freelance projects, and long-term opportunities.
+        </p>
+        <p class="muted">Let’s connect and build something meaningful.</p>
+
+        <!-- SOCIAL MEDIA (CONTENT BASED) -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/4triaaa/" target="_blank">
+                <img src="image/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://linkedin.com/in/username" target="_blank">
+                <img src="image/linkend.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/satriazoid" target="_blank">
+                <img src="image/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.threads.com/@4triaaa" target="_blank">
+                <img src="image/threads.png" alt="thereads">
+            </a>
+        </div>
     </div>
 </section>
+
 
 <div class="chatbot minimized" id="chatbot">
     <button class="chat-toggle" id="chatToggle">💬</button>
