@@ -54,7 +54,9 @@ The website is built with simplicity and clarity in mind, avoiding unnecessary a
 ├── README.md  
 └── assets/  
     └── social/  
+        ├── discord.png  
+        ├── github.png  
         ├── instagram.png  
-        ├── linkedin.png  
-        └── github.png  
+        ├── linkend.png  
+        └── threads.png  
 
