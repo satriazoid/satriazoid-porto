@@ -235,23 +235,31 @@ p {
    ========================= */
 
 .social-links {
-    margin-top: 32px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 22px;
+    align-items: center;     /* 🔥 penting */
+    gap: 16px;
+    flex-wrap: wrap;         /* aman kalau banyak */
 }
 
 .social-links a {
     width: 48px;
     height: 48px;
+    min-width: 48px;         /* 🔥 kunci */
+    min-height: 48px;        /* 🔥 kunci */
+
     border-radius: 50%;
     border: 1px solid var(--border);
+    background: #fff;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
-    transition: transform .25s ease, box-shadow .25s ease;
+
+    flex-shrink: 0;          /* 🔥 jangan mengecil */
 }
+
 
 .social-links img {
     width: 22px;
