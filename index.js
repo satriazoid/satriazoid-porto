@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const text = "Hello, I'm Jejo";
-    const subtitleText = "Data Scientist • Frontend Developer • UI Designer • Trading • Tech Enthusiast";
+    const subtitleText = "Data Scientist • Frontend Developer • UI Designer • Trader • Tech Enthusiast";
 
     const typingEl = document.getElementById("typing");
     const subtitleEl = document.getElementById("subtitle");
