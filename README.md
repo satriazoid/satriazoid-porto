@@ -52,10 +52,4 @@ The website is built with simplicity and clarity in mind, avoiding unnecessary a
 ├── script.js  
 ├── chatbot.js  
 ├── README.md  
-└── assets/  
-    └── social/  
-        ├── discord.png  
-        ├── github.png  
-        ├── instagram.png  
-        ├── linkend.png  
-        └── threads.png  
+└── image/  
