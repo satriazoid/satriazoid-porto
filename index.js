@@ -3,7 +3,6 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// Force scroll to top AFTER page really visible
 window.addEventListener('pageshow', function (event) {
     if (event.persisted) {
         window.scrollTo(0, 0);
@@ -68,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // jika sudah loop dan sampai bahasa terakhir → tampilkan subtitle dan hentikan loop
     if (wordIndex === words.length - 1 && charIndex === 0 && isDeleting) {
       subtitle.style.opacity = 1;
       return; // stop animasi
