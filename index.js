@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deletingSpeed = 60;
   const pause = 800;
 
-  subtitle.style.opacity = 0; // jadi muncul setelah typing selesai
+  subtitle.style.opacity = 1; // jadi muncul setelah typing selesai
 
   function typeLoop() {
     const word = words[wordIndex];
